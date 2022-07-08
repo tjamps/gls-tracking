@@ -1,0 +1,19 @@
+{
+    "name": "tjamps/gls-tracking",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Tjamps\\GlsTracking\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rémi T'JAMPENS",
+            "email": "remi.tjampens@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1"
+    }
+}
