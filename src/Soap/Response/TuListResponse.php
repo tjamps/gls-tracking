@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 class TuListResponse extends AbstractResponse
 {
-    /** @var array|ArrayCollection  */
+    /** @var TuItem[]|ArrayCollection  */
     private $tuList;
 
     public function __construct(ExitCode $exitCode, array $tuList = [])
@@ -40,6 +40,9 @@ class TuListResponse extends AbstractResponse
         }
     }
 
+    /**
+     * @return ArrayCollection|TuItem[]
+     */
     public function getTuList(): ArrayCollection
     {
         return $this->tuList;
