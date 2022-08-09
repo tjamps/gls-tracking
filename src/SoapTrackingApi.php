@@ -42,7 +42,7 @@ class SoapTrackingApi
 
         return new TuListResponse(
             new ExitCode($response->ExitCode->ErrorCode, $response->ExitCode->ErrorDscr),
-            $response->TUList ?: []
+            $response->TUList ?? []
         );
     }
 }
