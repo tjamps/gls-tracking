@@ -6,7 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 class TuDetailResponse
 {
-    /** @var array|ArrayCollection */
+    /** @var TuParcel[]|ArrayCollection */
     private $parcels;
 
     public function __construct(array $array)
@@ -19,6 +19,9 @@ class TuDetailResponse
         }
     }
 
+    /**
+     * @return ArrayCollection|TuParcel[]
+     */
     public function getParcels(): ArrayCollection
     {
         return $this->parcels;

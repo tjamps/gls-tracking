@@ -2,6 +2,7 @@
 
 namespace Tjamps\GlsTracking\Rest\Response;
 
+use DateTimeImmutable;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class TuParcel
@@ -10,7 +11,7 @@ class TuParcel
     private $status;
     /** @var string  */
     private $trackId;
-    /** @var ArrayCollection<TuEvent> */
+    /** @var ArrayCollection|TuEvent[] */
     private $events;
 
     public function __construct(string $status, string $trackId, array $events)
@@ -21,7 +22,7 @@ class TuParcel
 
         foreach ($events as $event) {
             $tuEvent = new TuEvent(
-                new \DateTimeImmutable($event['timestamp']),
+                new DateTimeImmutable($event['timestamp']),
                 $event['description'],
                 $event['location'],
                 $event['country'],
@@ -31,6 +32,9 @@ class TuParcel
         }
     }
 
+    /**
+     * @return ArrayCollection|TuEvent[]
+     */
     public function getEvents(): ArrayCollection
     {
         return $this->events;
